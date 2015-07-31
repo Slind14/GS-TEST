@@ -1,5 +1,7 @@
 language: java
 skip_cleanup: true
+before_install:
+ - "chmod +x gradlew"
 script: 
   - "./gradlew buildAll"
 deploy:
