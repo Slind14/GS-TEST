@@ -13,3 +13,4 @@ deploy:
     - "build/Galactic Science_1.3.1_Server.zip"
   on:
     repo: Slind14/GS-TEST
+    tags: true
