@@ -1,9 +1,11 @@
 language: java
 skip_cleanup: true
-before_install:
- - "chmod +x gradlew"
+install: 
+  - true
+#before_install:
+# - "chmod +x gradlew"
 script: 
-  - "./gradlew buildAll"
+  - "gradle buildAll"
 deploy:
   provider: releases
   api_key:
