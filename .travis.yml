@@ -2,17 +2,25 @@ language: java
 skip_cleanup: true
 install: 
   - true
-before_install:
- - "chmod +x gradlew"
+
+## Use provided gradle
+# before_install:
+#  - "chmod +x gradlew"
+# script: 
+#   - "./gradlew buildAll"
+##
+
+# Use system gradle
 script: 
-  - "./gradlew buildAll"
+  - "gradle buildAll"
+##
 deploy:
   provider: releases
   api_key:
     secure: d99glSPXGuBkWrstAyabJg+QQdhcJ2LcPDjO6jguof4ZjEn1lcfuEsm8YId/O5y1fMvwhcYqFEezLByCHjbJXRmhXDzDsgsgdGSUMmTQ0q+RvGsjdiACQlS1nv4KyjWBIh3NvY/e+GDEW6+qya9Hn9FDdzDYrisDONmuOurMViP6kstGQVUSvAgTS07TxVPm9hxyIvvinrGb1c2YqqjYbvoOjI3kzKYEi7aBBsVVjsgjP9BVceK60Cb8P3PK+nG87p6EKhwBzN/ptyNu77VWfkWC3mONI08MnvzjuGhh2SimOWT+30Laiarrt4iw7ywD/V5KITbmvYRPDalvRJWaltKJv+21OdHly79Qw21iyRrFA7TjBavqmGGV5C9NsXk44vx9R39TlcBJAij/y1JBfxXvziLbc0WgrVoENbTUu2N6+GhrtWAcALnnGJ+GJFnEbyckX2TZkw9gwt6bBIPT9Pgbug/FRrh1qurMlIE0mHqKfz+ROCV3bCbrKntqQym0upUC4Kdr2N1v+pgYySl4judrSHvTJANZpfu1X3HiVH+P9z+16mugCm3VVsRsoIspFI5rV18Y2eMJgUv+ebrT3BMjm92a5NMO6zGNMi6xmuVPQ/F3NVQ+qLnQn0RGDjJ1WmCQvwF0alqTBJZ2Cj/7/qtvMGXZ6QOE6CFIA0MTmlg=
+  file_glob: true
   file: 
     - "build/Galactic Science_*_Client.zip"
     - "build/Galactic Science_*_Server.zip"
   on:
-    repo: Slind14/GS-TEST
     tags: true
